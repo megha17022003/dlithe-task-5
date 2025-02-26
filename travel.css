@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.page {
+    width: 80%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button, select, textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+button {
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Destination Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.destination {
+    background: lightblue;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.destination img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.destination:hover {
+    background: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Previous Bookings Section */
+.booking-container {
+    margin-top: 20px;
+    padding: 10px;
+    background: #fff3cd;
+    border-radius: 5px;
+    border: 1px solid #ffeb3b;
+}
+
+.booking {
+    background: #ffeb3b;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.booking:hover {
+    background: #f9c402;
+}
+
+/* Wishlist Section */
+#wishlistContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.wishlist-item {
+    background: #ffc0cb;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+
+.wishlist-item:hover {
+    background: #ff69b4;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Payment Section */
+#paymentMethod {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#paymentStatus {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    margin-top: 10px;
+}
+
+/* Reviews Section */
+#reviewsContainer {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.review {
+    background: #e3f2fd;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.review:hover {
+    background: #bbdefb;
+}
+
+/* Discount Banner */
+#discountBanner {
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+    padding: 10px;
+    margin: 10px 0;
+    background: #ffcccc;
+    border-radius: 5px;
+}

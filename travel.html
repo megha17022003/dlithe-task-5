@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="travel.css">
+</head>
+<body>
+
+    <!-- Registration Page -->
+    <div id="registerPage" class="page">
+        <h1>Register for Travel Agency</h1>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <button onclick="registerUser()">Register</button>
+    </div>
+
+    <!-- Main Page -->
+    <div id="mainPage" class="page" style="display: none;">
+        <h1>Welcome, <span id="username"></span>!</h1>
+        <button onclick="logout()">Logout</button>
+        <button onclick="showPage('wishlistPage')">❤️ View Wishlist</button>
+        <button onclick="showPage('dashboardPage')">📜 My Bookings</button>
+
+        <input type="text" id="searchInput" placeholder="Search destinations..." onkeyup="filterDestinations()">
+        <select id="sortPrice" onchange="sortDestinations()">
+            <option value="">Sort by Price</option>
+            <option value="lowToHigh">Low to High</option>
+            <option value="highToLow">High to Low</option>
+        </select>
+        <select id="countryFilter" onchange="filterByCountry()">
+            <option value="">Filter by Country</option>
+            <option value="France">France</option>
+            <option value="Japan">Japan</option>
+            <option value="USA">USA</option>
+            <option value="Italy">Italy</option>
+            <option value="India">India</option>
+        </select>
+
+        <!-- Discount Banner -->
+        <h2 id="discountBanner"></h2>
+
+        <h2>Available Destinations</h2>
+        <div id="destinationList" class="grid-container"></div>
+
+        <!-- Section for displaying previous bookings -->
+        <h2>Your Previous Bookings</h2>
+        <div id="previousBookings" class="booking-container"></div>
+    </div>
+
+    <!-- Wishlist Page -->
+    <div id="wishlistPage" class="page" style="display: none;">
+        <h1>Your Wishlist</h1>
+        <div id="wishlistContainer" class="grid-container"></div>
+        <button onclick="showPage('mainPage')">Back</button>
+    </div>
+
+    <!-- Booking Page -->
+    <div id="bookingPage" class="page" style="display: none;">
+        <h1>Destination Details</h1>
+        <img id="destinationImage" src="" alt="Destination Image">
+        <p id="selectedDestination"></p>
+        <label for="numTickets">Number of Tickets:</label>
+        <input type="number" id="numTickets" value="1" min="1" onchange="updatePrice()">
+        <p><strong>Total Price: </strong><span id="totalPrice"></span></p>
+
+        <!-- Payment Section -->
+        <h2>Choose Payment Method</h2>
+        <select id="paymentMethod">
+            <option value="credit">Credit/Debit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="upi">UPI</option>
+        </select>
+        <button onclick="processPayment()">💳 Pay Now</button>
+        <p id="paymentStatus"></p>
+
+        <!-- Reviews Section -->
+        <h2>Leave a Review</h2>
+        <select id="rating">
+            <option value="1">⭐ 1</option>
+            <option value="2">⭐⭐ 2</option>
+            <option value="3">⭐⭐⭐ 3</option>
+            <option value="4">⭐⭐⭐⭐ 4</option>
+            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+        </select>
+        <textarea id="reviewText" placeholder="Write your review..."></textarea>
+        <button onclick="submitReview()">Submit Review</button>
+
+        <!-- Show Reviews -->
+        <h2>Reviews</h2>
+        <div id="reviewsContainer"></div>
+
+        <button onclick="confirmBooking()">Confirm Booking</button>
+        <button onclick="showPage('mainPage')">Back</button>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page" style="display: none;">
+        <h1>My Bookings</h1>
+        <div id="bookingHistory"></div>
+        <button onclick="showPage('mainPage')">Back</button>
+    </div>
+
+    <script src="travel.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="news.css">
+</head>
+<body>
+
+    <header>
+        <h1>Latest News</h1>
+        <button id="toggleDarkMode">🌙 Toggle Dark Mode</button>
+    </header>
+
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search news...">
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="Technology">Technology</option>
+            <option value="Sports">Sports</option>
+            <option value="Finance">Finance</option>
+            <option value="Health">Health</option>
+            <option value="Entertainment">Entertainment</option>
+        </select>
+        <select id="sortFilter">
+            <option value="latest">Latest</option>
+            <option value="popular">Most Popular</option>
+            <option value="relevant">Relevant</option>
+        </select>
+    </div>
+
+    <div id="newsList" class="grid-view"></div>
+
+    <div class="buttons">
+        <button id="loadMore">Load More</button>
+        <button id="loadLess" style="display: none;">Show Less</button>
+    </div>
+
+    <!-- 🔹 New Section for Bookmarked Articles -->
+    <!-- 📌 New Section for Bookmarks -->
+<section id="bookmarkedNews">
+    <h2>📌 Bookmarked Articles</h2>
+    <div id="bookmarkList"></div>
+</section>
+
+    <script src="news.js"></script>
+</body>
+</html>
